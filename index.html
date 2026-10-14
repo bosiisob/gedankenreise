@@ -8,14 +8,14 @@
 	<link rel="stylesheet" type="text/css" href="index_html.css?h=242dcda9">
 	<style>
 	  :root{
-		--site-primary: #1f2328; /* main body text color */
-		--site-heading: #111827; /* headings */
-		--site-muted: #4b5563; /* muted text */
-		--card-bg-start: #ffffff;
-		--card-bg-end: #fbfbfa;
-		--card-border: rgba(31, 35, 40, 0.08);
-		--note-bg: rgba(248,250,252,1); /* matches previous subtle light */
-		--note-border: #e5e7eb;
+		--site-primary: #e5e7eb;
+		--site-heading: #f3f4f6;
+		--site-muted: #c1c7d0;
+		--card-bg-start: #171b22;
+		--card-bg-end: #111827;
+		--card-border: rgba(148, 163, 184, 0.2);
+		--note-bg: rgba(31, 41, 55, 0.72);
+		--note-border: rgba(148, 163, 184, 0.18);
 	  }
 
 	  body {
@@ -31,7 +31,7 @@
 		padding: 22px 20px 18px;
 		border-radius: 14px;
 		background: linear-gradient(180deg, var(--card-bg-start) 0%, var(--card-bg-end) 100%);
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
 		border: 1px solid var(--card-border);
 	  }
 
@@ -60,20 +60,17 @@
 	  .embed-wrap {
 		min-height: 220px;
 		padding-top: 4px;
-		/* frame the embed so it visually matches the site */
 		border-radius: 10px;
 		overflow: hidden;
-		border: 1px solid rgba(31,35,40,0.03);
-		background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(251,251,250,0.6));
+		border: 1px solid rgba(148, 163, 184, 0.14);
+		background: linear-gradient(180deg, rgba(17,24,39,0.75), rgba(12,18,28,0.8));
 	  }
 
-	  /* utterances embed container - we can't style inside the iframe, but we can set surrounding colors */
 	  .utterances {
 		max-width: 100%;
 		display: block;
 	  }
 
-	  /* small screens: reduce padding to fit */
 	  @media (max-width: 520px) {
 		#discussion { padding: 16px; }
 		.discussion-note { padding: 10px; }
