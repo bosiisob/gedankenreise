@@ -7,11 +7,22 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="index_html.css?h=242dcda9">
 	<style>
+	  :root{
+		--site-primary: #1f2328; /* main body text color */
+		--site-heading: #111827; /* headings */
+		--site-muted: #4b5563; /* muted text */
+		--card-bg-start: #ffffff;
+		--card-bg-end: #fbfbfa;
+		--card-border: rgba(31, 35, 40, 0.08);
+		--note-bg: rgba(248,250,252,1); /* matches previous subtle light */
+		--note-border: #e5e7eb;
+	  }
+
 	  body {
 		margin: 0;
 		padding: 24px 16px 40px;
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-		color: #1f2328;
+		color: var(--site-primary);
 	  }
 
 	  #discussion {
@@ -19,40 +30,53 @@
 		margin: 28px auto 0;
 		padding: 22px 20px 18px;
 		border-radius: 14px;
-		background: linear-gradient(180deg, #ffffff 0%, #fbfbfa 100%);
+		background: linear-gradient(180deg, var(--card-bg-start) 0%, var(--card-bg-end) 100%);
 		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-		border: 1px solid rgba(31, 35, 40, 0.08);
+		border: 1px solid var(--card-border);
 	  }
 
 	  #discussion h2 {
 		margin: 0 0 12px;
 		font-size: 24px;
 		line-height: 1.2;
-		color: #111827;
+		color: var(--site-heading);
 	  }
 
 	  .discussion-note {
 		margin: 0 0 18px;
 		font-size: 14px;
 		line-height: 1.6;
-		color: #4b5563;
+		color: var(--site-muted);
 		padding: 12px 14px;
-		background: #f8fafc;
-		border: 1px solid #e5e7eb;
+		background: var(--note-bg);
+		border: 1px solid var(--note-border);
 		border-radius: 10px;
 	  }
 
 	  .discussion-note strong {
-		color: #111827;
+		color: var(--site-heading);
 	  }
 
 	  .embed-wrap {
 		min-height: 220px;
 		padding-top: 4px;
+		/* frame the embed so it visually matches the site */
+		border-radius: 10px;
+		overflow: hidden;
+		border: 1px solid rgba(31,35,40,0.03);
+		background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(251,251,250,0.6));
 	  }
 
+	  /* utterances embed container - we can't style inside the iframe, but we can set surrounding colors */
 	  .utterances {
 		max-width: 100%;
+		display: block;
+	  }
+
+	  /* small screens: reduce padding to fit */
+	  @media (max-width: 520px) {
+		#discussion { padding: 16px; }
+		.discussion-note { padding: 10px; }
 	  }
 	</style>
 </head>
