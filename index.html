@@ -17,12 +17,20 @@
 		box-shadow:0 6px 18px rgba(0,0,0,0.06);
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 	  }
-	  #discussion h2{margin:0 0 12px 0;font-size:20px}
-	  .provider-toggle{display:flex;gap:8px;margin-bottom:12px}
-	  .provider-toggle button{padding:8px 12px;border:1px solid #ddd;background:#fff;border-radius:6px;cursor:pointer}
-	  .provider-toggle button.active{background:#0366d6;color:#fff;border-color:transparent}
-	  .discussion-note{font-size:13px;color:#555;margin-bottom:12px}
-	  .embed-wrap{min-height:200px}
+	  #discussion h2 {
+		margin:0 0 12px 0;
+		font-size:20px;
+		color:#1f2328;
+	  }
+	  .discussion-note {
+		font-size:13px;
+		color:#555;
+		margin-bottom:14px;
+		line-height:1.5;
+	  }
+	  .embed-wrap {
+		min-height:200px;
+	  }
 	</style>
 </head>
 <body>
@@ -34,12 +42,7 @@
 <hr>
 <section id="discussion">
   <h2>Discussion</h2>
-  <div class="discussion-note">Choose a provider below to view or post comments. Notes: Utterances uses GitHub Issues; Giscus uses GitHub Discussions (enable Discussions & create a category named "General"). If this repository is private, visitors may need to sign in or functionality may be limited.</div>
-
-  <div class="provider-toggle" role="tablist" aria-label="Discussion providers">
-    <button id="btn-utterances" class="active" onclick="showProvider('utterances')">Utterances (Issues)</button>
-    <button id="btn-giscus" onclick="showProvider('giscus')">Giscus (Discussions)</button>
-  </div>
+  <div class="discussion-note">Comments are powered by Utterances and stored as GitHub Issues on this repository.</div>
 
   <div id="embed-utterances" class="embed-wrap">
     <div id="utterances_thread"></div>
@@ -52,34 +55,7 @@
             async>
     </script>
   </div>
-
- <div id="embed-giscus" class="embed-wrap" style="display:none">
-   <script src="https://giscus.app/client.js"
-        data-repo="bosiisob/gedankenreise"
-        data-repo-id="R_kgDOOvshBQ"
-        data-category="General"
-        data-category-id="DIC_kwDOOvshBc4DIbwr"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="dark"
-        data-lang="de"
-        crossorigin="anonymous"
-        async>
-   </script>
-</div>
 </section>
-	
-<script>
-  function showProvider(name){
-    document.getElementById('embed-utterances').style.display = (name==='utterances') ? '' : 'none';
-    document.getElementById('embed-giscus').style.display = (name==='giscus') ? '' : 'none';
-    document.getElementById('btn-utterances').classList.toggle('active', name==='utterances');
-    document.getElementById('btn-giscus').classList.toggle('active', name==='giscus');
-  }
-</script>
 
 </body>
 </html>
